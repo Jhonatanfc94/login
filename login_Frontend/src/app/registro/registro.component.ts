@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { AuthServiceService } from '../servicios/auth-service.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-registro',
@@ -51,11 +52,19 @@ export class RegistroComponent {
       next: (response) => {
         console.log('Usuario registrado con éxito', response);
         this.router.navigate(['/']);
+        this.openSnackBar('Se registro correctamente. ', 'Cerrar');
       },
       error: (error) => {
         console.error('Error al registrar el usuario', error);
+        this.openSnackBar('Registro incorrecto, es posible que ya exista este usuario. ', 'Cerrar');
       }
     });
+  }
+  
+  private _snackBar = inject(MatSnackBar);
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action);
   }
 
   navigateToLogin() {
