@@ -1,0 +1,29 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #318be1;
+}
+
+.login{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 100px;
+    border-radius: 10px;
+}
+
+.input{
+    width: 100%;
+}
+
+.button{
+    margin: 5px;
+}
+
+section{
+    display: flex;
+    flex-direction: row;
+}

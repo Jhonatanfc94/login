@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="login">
+      <h1 class="text-2xl font-bold">Registrate</h1>
+  
+      <mat-form-field class="input">
+        <mat-label>Username</mat-label>
+        <input matInput [value]="username()" (input)="updateUsername($event)" placeholder="Username">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Password</mat-label>        
+        <input matInput [value]="password()" (input)="updatePassword($event)" type="password" placeholder="Password">
+      </mat-form-field>
+      <section>
+        <div>
+          <button class="button" mat-stroked-button (click)="onRegister()">Registrar Usuario</button>    
+        </div>
+        <div>
+          <button class="button" mat-flat-button (click)="navigateToLogin()">Volver a Login</button>
+        </div>
+      </section>
+    </div>
+  </div>
