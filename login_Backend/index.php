@@ -15,11 +15,4 @@ $authController = new AuthController();
 
 $request_method = $_SERVER['REQUEST_METHOD'];
 $request_uri = $_SERVER['REQUEST_URI'];
-
-if ($request_method == 'POST' && $request_uri == '/login') {
-    $authController->login();
-} else {
-    http_response_code(404);
-    echo json_encode(['message' => 'Endpoint no encontrado']);
-}
 ?>

@@ -38,6 +38,7 @@ export class LoginComponent {
     this.authService.login(this.username(), this.password()).subscribe({
       next: (response) => {
         console.log('Login exitoso', response);
+        this.router.navigate(['/confirmacion']);
       },
       error: (error) => {
         console.error('Error al hacer login', error);
