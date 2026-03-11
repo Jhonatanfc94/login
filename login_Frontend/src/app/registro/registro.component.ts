@@ -1,73 +1,42 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
 import { AuthServiceService } from '../servicios/auth-service.service';
-import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-registro',
   standalone: true,
-  imports: [FormsModule, CommonModule , MatInputModule, MatFormFieldModule, MatButtonModule],
+  imports: [ReactiveFormsModule, CommonModule, RouterLink],
   templateUrl: './registro.component.html',
-  styleUrl: './registro.component.css'
+  styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent {
-  username = signal('');
-  email = signal('');
-  password = signal('');
+  private fb = inject(FormBuilder);
+  private authService = inject(AuthServiceService);
+  private router = inject(Router);
 
-  constructor(private authService: AuthServiceService, private router: Router) {}
+  registroForm = this.fb.group({
+    username: ['', Validators.required],
+    password: ['', Validators.required]
+  });
 
-  updateUsername(event: Event) {
-    const target = event.target as HTMLInputElement;
-    if (target) {
-      this.username.set(target.value);
+  mensajeError = '';
+
+  public onSubmit(): void {
+    if (this.registroForm.valid) {
+      const usuario = this.registroForm.value.username as string;
+      const contraseña = this.registroForm.value.password as string;
+
+      // ¡Aquí está el cambio! Usamos .register en lugar de .registro
+      this.authService.register(usuario, contraseña).subscribe({
+        next: (response: any) => {
+          this.router.navigate(['/login']);
+        },
+        error: (err: any) => {
+          this.mensajeError = err.error?.message || 'Error al registrar';
+        }
+      });
     }
-  }
-
-  // Método para actualizar el email
-  updateEmail(event: Event) {
-    const target = event.target as HTMLInputElement;
-    if (target) {
-      this.email.set(target.value);
-    }
-  }
-
-  updatePassword(event: Event) {
-    const target = event.target as HTMLInputElement;
-    if (target) {
-      this.password.set(target.value);
-    }
-  }
-
-  onRegister() {
-    const username = this.username();
-    const password = this.password();
-
-    this.authService.register(username, password).subscribe({
-      next: (response) => {
-        console.log('Usuario registrado con éxito', response);
-        this.router.navigate(['/']);
-        this.openSnackBar('Se registro correctamente. ', 'Cerrar');
-      },
-      error: (error) => {
-        console.error('Error al registrar el usuario', error);
-        this.openSnackBar('Registro incorrecto, es posible que ya exista este usuario. ', 'Cerrar');
-      }
-    });
-  }
-  
-  private _snackBar = inject(MatSnackBar);
-
-  openSnackBar(message: string, action: string) {
-    this._snackBar.open(message, action);
-  }
-
-  navigateToLogin() {
-    this.router.navigate(['']);
   }
 }

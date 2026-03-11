@@ -1,0 +1,13 @@
+# Entorno virtual
+.venv/
+env/
+venv/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Datos (Opcional: decide si quieres subir tus usuarios de prueba o no)
+# data/users.txt

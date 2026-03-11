@@ -1,6 +1,6 @@
 [
     {
-        "username": "admin",
-        "password": "admin"
+        "username": "tester",
+        "password": "$2b$12$TstKHQX.PXCU77haY3JXeOYyJstQji4E0JEUkPFfz8haW6wejHq/i"
     }
 ]

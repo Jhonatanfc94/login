@@ -4,7 +4,8 @@ import { RegistroComponent } from './registro/registro.component';
 import { ConfirmacionComponent } from './confirmacion/confirmacion.component';
 
 export const routes: Routes = [
-    { path: '', component: LoginComponent},
-    { path: 'registro', component: RegistroComponent},
-    { path: 'confirmacion', component: ConfirmacionComponent}
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'registro', component: RegistroComponent },
+  { path: 'confirmacion', component: ConfirmacionComponent }
 ];
