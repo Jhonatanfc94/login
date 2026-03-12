@@ -2,5 +2,93 @@
     {
         "username": "tester",
         "password": "$2b$12$TstKHQX.PXCU77haY3JXeOYyJstQji4E0JEUkPFfz8haW6wejHq/i"
+    },
+    {
+        "username": "locust_user_b46c2442",
+        "password": "$2b$12$UElbwCp9JW5FfP4BYv0wS.pN6TXPRjOlfpJUUr2jyIyVY0U/MjENW"
+    },
+    {
+        "username": "locust_user_a82bbfae",
+        "password": "$2b$12$9rMhovyDOrAvWxxUBF2gYOiO4Ai2ZQJPaEL7rt7MlVUKQW0i46S6i"
+    },
+    {
+        "username": "locust_user_aecf5141",
+        "password": "$2b$12$3U0sovnf7IzlE0xFexC13ONrS4yZMAtI7OZLkDQYjil2DociROSlO"
+    },
+    {
+        "username": "locust_user_0808d4c3",
+        "password": "$2b$12$kIk13e4Je8naUysr1p5sxeEyOO0RcQ6R91aWB7WBUncSFP9REH4U6"
+    },
+    {
+        "username": "locust_user_4078eb8f",
+        "password": "$2b$12$dDP4pmX2FwijKSiDGSFw7OhMx5P80.c0auoTTS8dgy3L4zvBY.8rK"
+    },
+    {
+        "username": "locust_user_5a789496",
+        "password": "$2b$12$5h.bXvLG.39f5SNNhrJbaOVnLutWPgvFFsib3LIO4cUaQ.fHXepHG"
+    },
+    {
+        "username": "locust_user_3a9ff387",
+        "password": "$2b$12$IrruHkGl0U..OhnCz7NQCOsPeus4JTs0Cpe3eDk9tr3agvI.7skCy"
+    },
+    {
+        "username": "locust_user_53cc16f5",
+        "password": "$2b$12$cLarhJ6TeWE56syPGmiG2.ivOKbx8qh2E16ye7KghmAHVViBjpK36"
+    },
+    {
+        "username": "locust_user_f21e5bde",
+        "password": "$2b$12$rjCE9I7nAzEZPx1g37kMkOzmVphD6Vhe3c4WuVyNoqmCKoqyRecyK"
+    },
+    {
+        "username": "locust_user_9b302679",
+        "password": "$2b$12$zMAsn0hk0JSbOlyFFf4..uswbMt7qduQbYILDUBCnW2jDfaqGOr6e"
+    },
+    {
+        "username": "locust_user_846f1d25",
+        "password": "$2b$12$OHWNu0pYhW0Ih7yAo7.c.O.GPWltlGCP3rRL9Q45XJ0JLmvKixeM."
+    },
+    {
+        "username": "locust_user_4b064794",
+        "password": "$2b$12$F2ImIZztYGW3tCy0njoZFu60iWycoSPGj/HDtk/MDcidQ/j.UAHPW"
+    },
+    {
+        "username": "locust_user_b0a5b57b",
+        "password": "$2b$12$Xrn6bCYPAXRmmBGDc6NSg.7u5JYFOWQkEuzrkCDT9tAxEl3xv49dC"
+    },
+    {
+        "username": "locust_user_990b552f",
+        "password": "$2b$12$aPr9mWbvKVMGeoQfhZBiSexNKlaoqeAnH5FiY.gDN4/K3RywjJ2kC"
+    },
+    {
+        "username": "locust_user_92b1eda2",
+        "password": "$2b$12$QNNQnMxyKVTG3x3eEQdEcuW50LwAZvn4rIf0HpcrZeRKY3dhwYpZu"
+    },
+    {
+        "username": "locust_user_8b3fcc98",
+        "password": "$2b$12$P8/rjRsIl4.LcqVxsigpxOH2.T80hRXKiGHSK8Ici2yq9wNx5hv6G"
+    },
+    {
+        "username": "locust_user_e3b94a22",
+        "password": "$2b$12$Pbug1PJxMz.zcWY6F87/auyrrd1nwfhb3rLABTaY0NlFj2w3mWkeK"
+    },
+    {
+        "username": "locust_user_a55beed0",
+        "password": "$2b$12$dsnDchlLonAmjWpSZzTINuUExV8yW26DhiHLF11PJJM/GMNz4ygJa"
+    },
+    {
+        "username": "locust_user_88e3fe58",
+        "password": "$2b$12$rjQET1dMhi0J6hK1pQs4FOiDLNHA9sY75RjRaRVBZmIfHgIA82/Aq"
+    },
+    {
+        "username": "locust_user_58056b70",
+        "password": "$2b$12$wd.jNDV16DLmu/gvbmouNOPeOkKUns.3oNr2vbjq/bTkIHeDUuJES"
+    },
+    {
+        "username": "locust_user_ec5ba13a",
+        "password": "$2b$12$2BIKl8IuQaLDyQz5k.vFAe3HG1KmuRlqnoNScX5KC4SakZ8TJFeTS"
+    },
+    {
+        "username": "locust_user_03a888a9",
+        "password": "$2b$12$RcSt7TTdL1KgFNARsRSEvuAfosYajZI6YCPYbJttThoZ8G8Z6c3NC"
     }
 ]

@@ -134,6 +134,38 @@ def login():
 
     return jsonify({'message': 'Credenciales incorrectas'}), 401
 
+@app.route('/user/<username>', methods=['DELETE'])
+def delete_user(username):
+    """
+    Elimina un usuario del sistema.
+    ---
+    tags:
+      - Autenticación
+    parameters:
+      - name: username
+        in: path
+        type: string
+        required: true
+        description: Nombre de usuario a eliminar
+    responses:
+      200:
+        description: Usuario eliminado con éxito
+      404:
+        description: Usuario no encontrado
+    """
+    users = get_users()
+    initial_count = len(users)
+    
+    # Filtrar la lista excluyendo al usuario que queremos eliminar
+    users = [user for user in users if user['username'] != username]
+    
+    # Si la longitud es la misma, el usuario no existía
+    if len(users) == initial_count:
+        return jsonify({'message': 'Usuario no encontrado'}), 404
+        
+    save_users(users)
+    return jsonify({'message': 'Usuario eliminado con éxito'}), 200
+
 # Iniciar el servidor
 if __name__ == '__main__':
     # debug=True reinicia el servidor automáticamente cuando haces cambios
