@@ -1,49 +1,81 @@
-# Backend - API de Autenticación
+# 🚀 Backend - API de Autenticación
 
-Este es el backend de la aplicación, construido con **Python y Flask**. Proporciona una API RESTful para manejar el registro y la autenticación de usuarios de forma segura utilizando `bcrypt` para el hash de contraseñas.
+¡Bienvenido al backend de nuestra aplicación! Este proyecto está construido con **Python y Flask**. Proporciona una API RESTful para manejar el registro y la autenticación de usuarios de forma segura.
 
-## 🚀 Tecnologías utilizadas
-* **Python 3**
-* **Flask** (Microframework web)
-* **Flask-CORS** (Para permitir peticiones desde el frontend en Angular)
-* **Bcrypt** (Encriptación segura de contraseñas)
-* **JSON** (Almacenamiento local de datos)
+Si es tu primera vez trabajando con un backend, ¡no te preocupes! Sigue estos pasos uno a uno.
 
-## 📁 Estructura de Datos
-Para este mockup, la base de datos es un archivo de texto plano ubicado en `data/users.txt`. 
-* El archivo se crea automáticamente si no existe al iniciar el servidor.
-* **Seguridad:** Las contraseñas NUNCA se guardan en texto plano; se encriptan con `bcrypt` antes de ser almacenadas. No agregues usuarios manualmente escribiendo contraseñas normales en este archivo.
+## 🛑 1. Requisitos Previos (¡Muy Importante!)
+Antes de escribir cualquier comando, asegúrate de tener instaladas estas herramientas en tu computadora:
 
-## ⚙️ Requisitos previos
-* Python 3.x instalado en el sistema.
+* **Python (versión 3.8 o superior):** Es el lenguaje en el que está escrito el código. 
+  * [Descargar Python aquí](https://www.python.org/downloads/). *(Nota para Windows: Durante la instalación, asegúrate de marcar la casilla **"Add Python to PATH"** en la primera pantalla).*
+* **Visual Studio Code (VS Code):** Es el editor de código donde trabajaremos.
+  * [Descargar VS Code aquí](https://code.visualstudio.com/).
+* **Postman (Opcional pero recomendado):** Para probar que nuestra API funciona.
+  * [Descargar Postman aquí](https://www.postman.com/downloads/).
 
-## 🛠️ Instalación y ejecución
+## 💻 2. Preparando el Entorno
 
-1. **Navega a la carpeta del backend**:
-   ```bash
-   cd login_Backend
+1. **Abre el proyecto en VS Code:**
+   Abre Visual Studio Code, ve a `Archivo > Abrir Carpeta` (File > Open Folder) y selecciona la carpeta principal de este proyecto (`login_Backend`).
+2. **Abre la Terminal:**
+   En VS Code, ve al menú superior y selecciona `Terminal > Nueva Terminal`.
 
-2. **Crea y activa un entorno virtual (Recomendado):**
+## ⚙️ 3. Instalación paso a paso
 
-Bash
+Vamos a crear un "Entorno Virtual". Esto es como una burbuja aislada en tu computadora para que las herramientas de este proyecto no interfieran con otros programas.
+
+**Paso A: Crear la burbuja (Entorno Virtual)**
+En tu terminal, escribe el siguiente comando y presiona Enter:
+```bash
 python -m venv .venv
-# En Windows:
-.venv\Scripts\activate
-# En Mac/Linux:
-source .venv/bin/activate
-3. **Instala las dependencias necesarias:**
-Si tienes un archivo requirements.txt, ejecuta pip install -r requirements.txt. Si no, instala los paquetes manualmente:
+```
+*(Notarás que aparece una nueva carpeta llamada `.venv` en tus archivos).*
 
-Bash
-pip install flask flask-cors bcrypt
-4. **Inicia el servidor:**
+**Paso B: Entrar a la burbuja (Activar el entorno)**
+Dependiendo de tu sistema operativo, ejecuta el comando correspondiente:
 
-Bash
+* **En Mac/Linux:**
+  ```bash
+  source .venv/bin/activate
+  ```
+* **En Windows (PowerShell/CMD):**
+  ```powershell
+  .venv\Scripts\activate
+  ```
+  > ⚠️ **¿Te dio un error rojo en Windows sobre permisos?**
+  > Esto es normal. Windows bloquea la ejecución de scripts por seguridad. Para solucionarlo, escribe esto en la terminal y presiona Enter:
+  > `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
+  > Luego, vuelve a intentar el comando `.venv\Scripts\activate`.
+
+Sabrás que funcionó porque en tu terminal aparecerá la palabra `(.venv)` al inicio de la línea.
+
+**Paso C: Instalar las herramientas mágicas (Dependencias)**
+Ahora que estamos dentro de la burbuja, vamos a instalar Flask, herramientas de seguridad y documentación. Ejecuta:
+```bash
+pip install -r requirements.txt
+```
+
+## 🚀 4. ¡Enciende el Servidor!
+
+Con todo instalado, solo queda arrancar el motor de nuestra API:
+```bash
 python app.py
-El servidor se ejecutará en modo debug en http://localhost:5000/.
-http://localhost:5000/apidocs/
+```
+Si todo salió bien, verás un mensaje en la terminal indicando que el servidor está corriendo.
 
-**📡 Endpoints de la API**
-POST /register: Recibe { "username": "...", "password": "..." }. Encripta la contraseña y guarda al usuario.
+* **API en vivo:** `http://localhost:5000/`
+* **Documentación interactiva (Swagger):** `http://localhost:5000/apidocs/` *(Abre este enlace en tu navegador web para ver y probar los endpoints visualmente).*
 
-POST /login: Recibe las credenciales, verifica el hash de la contraseña y devuelve un mensaje de éxito.
+---
+
+## 📁 Estructura de Datos y Seguridad
+Para mantener este ejercicio sencillo, usamos un archivo de texto plano en `data/users.txt` como base de datos. 
+* El archivo se crea solo. No necesitas hacerlo tú.
+* **Seguridad:** Aunque usamos un archivo de texto, las contraseñas **NUNCA** se guardan legibles. Se encriptan usando `bcrypt`. Por favor, no intentes agregar usuarios escribiendo en este archivo a mano.
+
+## 📡 Endpoints (Rutas) Principales
+Si vas a conectar esto con un frontend (como Angular), estas son las rutas que debes llamar:
+
+* `POST /register`: Recibe `{ "username": "...", "password": "..." }`. Encripta la contraseña y guarda al usuario.
+* `POST /login`: Recibe las credenciales, verifica que sean correctas y devuelve un mensaje de éxito.
